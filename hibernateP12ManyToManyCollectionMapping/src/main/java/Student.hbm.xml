@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 5 Nov, 2019 9:41:28 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.p12.hibernateP12ManyToManyCollectionMapping.model.Student" table="manytomany_student">
+        <id name="id" type="int">
+            <column name="Id" />
+            <generator class="assigned" />
+        </id>
+        <property name="age" type="int">
+            <column name="Age" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="Name" />
+        </property>
+        <property name="gender" type="java.lang.String">
+            <column name="Gender" />
+        </property>
+        <list name="laptops" table="manytomany_student_laptop"  cascade="all" >
+            <key>
+                <column name="sid" />
+            </key>
+            <list-index>
+            	<column name="Type"/>
+            </list-index>
+            <many-to-many class="com.p12.hibernateP12ManyToManyCollectionMapping.model.Laptop" column="lid"  />
+        </list>
+    </class>
+    
+    <class name="com.p12.hibernateP12ManyToManyCollectionMapping.model.Laptop" table="manytomany_laptop">
+    	<id name="id" type="int">
+    		<column name="lid"/>
+    		<generator class="increment"/>
+    	</id>
+    	<property name="name" type="java.lang.String">
+            <column name="Name" />
+        </property>
+        <property name="type" type="java.lang.String">
+            <column name="LType" />
+        </property>
+        <property name="price" type="double">
+            <column name="Price" />
+        </property>
+    </class>
+    
+</hibernate-mapping>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 4 Nov, 2019 11:00:58 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.p10.hibernateP10MapCollectionMapping.model.Student" table="map_student">
+        <id name="id" type="int">
+            <column name="Id" />
+            <generator class="assigned" />
+        </id>
+        <property name="age" type="int">
+            <column name="Age" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="Name" />
+        </property>
+        <property name="gender" type="java.lang.String">
+            <column name="Gender" />
+        </property>
+         <map name="laptops" table="map_laptop">
+            <key>
+                <column name="Id" />
+            </key>
+            <index type="java.lang.String">
+            	<column name="lType" />
+            </index>
+            <element type="java.lang.String">
+                <column name="Laptop" />
+            </element>
+        </map> 
+        
+        <!-- <map name="laptops" table="map_laptop">
+            <key column="Id"  />
+            <index column="lType" type="java.lang.String"/>
+            <element column="Laptop" type="java.lang.String" />
+        </map> -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22 Sep, 2019 1:14:17 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.p2.hibernateP2.model">
+    <class name="Book" table="book">
+        <id name="code" type="int">
+            <column name="Code" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="Name" />
+        </property>
+        <property name="publication" type="java.lang.String">
+            <column name="Publication" />
+        </property>
+    </class>
+</hibernate-mapping>

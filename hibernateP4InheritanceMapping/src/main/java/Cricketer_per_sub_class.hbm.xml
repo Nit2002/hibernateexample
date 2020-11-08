@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Sep, 2019 7:14:48 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.p4.hibernateP4InheritanceMapping.model">
+    <class name="Cricketer" table="cricketer_per_sub_class" >
+        <id name="id" type="int" length="20" >
+            <column name="Id" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String" length="20" >
+            <column name="Name" />
+        </property>
+        <joined-subclass name="Bowler" table="bowler_per_sub_class" >
+	    	<key column="Id" />
+	        <property name="bestFigure" type="java.lang.String" length="20" >
+	        	<column name="BestFigure" />
+	        </property>
+    	</joined-subclass>
+	    <joined-subclass name="Batter" table="batter_per_sub_class" >
+	    	<key column="id" />
+	        <property name="bestScore" type="java.lang.String" length="20">
+	        	<column name="BestScore" />
+	        </property>
+	     </joined-subclass>
+    </class>
+    
+</hibernate-mapping>

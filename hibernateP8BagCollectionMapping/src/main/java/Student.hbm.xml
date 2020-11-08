@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 4 Nov, 2019 2:35:13 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.p8.hibernateP8BagCollectionMapping.model.Student" table="student_bag">
+        <id name="id" type="int">
+            <column name="Id" />
+            <generator class="assigned" />
+        </id>
+        <property name="age" type="int">
+            <column name="Age" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="Name" />
+        </property>
+        <property name="gender" type="java.lang.String">
+            <column name="Gender" />
+        </property>
+        <bag name="laptops" table="laptop_bag">
+            <key>
+                <column name="Id" />
+            </key>
+            <element type="java.lang.String">
+                <column name="Laptops" />
+            </element>
+        </bag>
+    </class>
+</hibernate-mapping>

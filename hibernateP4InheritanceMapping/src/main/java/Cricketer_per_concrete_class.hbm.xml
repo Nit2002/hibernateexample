@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Sep, 2019 7:14:48 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.p4.hibernateP4InheritanceMapping.model">
+    <class name="Cricketer" table="cricketer_per_concrete_class" >
+        <id name="id" type="int" length="20" >
+            <column name="Id" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String" length="20" >
+            <column name="Name" />
+        </property>
+    </class>
+    <class name="Bowler" table="bowler_per_concreate_class" >
+    	<id name="id" type="int" length="20" >
+            <column name="Id" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String" length="20" >
+            <column name="Name" />
+        </property>
+        <property name="bestFigure" type="java.lang.String" length="20" >
+        	<column name="BestFigure" />
+        </property>
+    </class>
+    <class name="Batter" table="batter_per_concreate_class" >
+    	<id name="id" type="int" length="20" >
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String" length="20" >
+            <column name="Name" />
+        </property>
+        <property name="bestScore" type="java.lang.String" length="20">
+        	<column name="BestScore" />
+        </property>
+     </class>
+</hibernate-mapping>
